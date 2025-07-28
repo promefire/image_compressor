@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block title %}图片压缩工具 - 首页{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto text-center mb-4">
+        <h1 class="display-5 fw-bold">图片压缩工具</h1>
+        <p class="lead">轻松压缩您的图片，减小文件大小，提高网站加载速度</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <i class="fas fa-upload me-2"></i>上传图片
+            </div>
+            <div class="card-body">
+                <div id="drop-zone" class="drop-zone mb-3">
+                    <div class="text-center py-4">
+                        <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-primary"></i>
+                        <p class="mb-1">拖放图片到这里或点击选择文件</p>
+                        <p class="small text-muted">支持 JPG, PNG, GIF, BMP, WebP 格式</p>
+                    </div>
+                    <input type="file" id="file-input" class="d-none" accept="image/*" multiple>
+                </div>
+                
+                <div id="preview-container" class="d-none mb-3">
+                    <h5><i class="fas fa-images me-2"></i>预览：</h5>
+                    <div id="preview-images" class="row g-2"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <i class="fas fa-sliders-h me-2"></i>压缩选项
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="max-width" class="form-label">最大宽度</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="max-width" value="1280" min="100">
+                            <span class="input-group-text">px</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="max-height" class="form-label">最大高度</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="max-height" value="1280" min="100">
+                            <span class="input-group-text">px</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="quality" class="form-label">压缩质量 (1-100)</label>
+                    <input type="range" class="form-range" id="quality" min="1" max="100" value="85">
+                    <div class="d-flex justify-content-between">
+                        <span class="small text-muted">低质量</span>
+                        <span class="small text-primary fw-bold" id="quality-value">85</span>
+                        <span class="small text-muted">高质量</span>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="format" class="form-label">输出格式</label>
+                    <select class="form-select" id="format">
+                        <option value="original">保持原格式</option>
+                        <option value="jpeg">JPG</option>
+                        <option value="png">PNG</option>
+                        <option value="webp">WebP (推荐)</option>
+                    </select>
+                    <div class="form-text">WebP格式通常可以提供更好的压缩效果</div>
+                </div>
+                
+                <button id="compress-btn" class="btn btn-primary w-100" disabled>
+                    <i class="fas fa-compress-alt me-2"></i>压缩图片
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <i class="fas fa-chart-pie me-2"></i>压缩结果
+            </div>
+            <div class="card-body">
+                <div id="results-container" class="min-vh-50">
+                    <div class="text-center py-5 text-muted">
+                        <i class="fas fa-info-circle fa-3x mb-3"></i>
+                        <p>上传并压缩图片后，结果将显示在这里</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 这里的JavaScript代码将在单独的main.js文件中实现
+    });
+</script>
+{% endblock %}

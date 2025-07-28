@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}图片压缩工具 - 关于{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <i class="fas fa-info-circle me-2"></i>关于图片压缩工具
+            </div>
+            <div class="card-body">
+                <h2 class="h4 mb-3">工具介绍</h2>
+                <p>图片压缩工具是一个基于Web的应用程序，旨在帮助用户轻松压缩图片文件，减小文件大小，提高网站加载速度。</p>
+                
+                <h2 class="h4 mb-3 mt-4">主要功能</h2>
+                <ul>
+                    <li>支持多种图片格式：JPG, PNG, GIF, BMP, WebP</li>
+                    <li>调整图片尺寸（保持纵横比）</li>
+                    <li>控制压缩质量</li>
+                    <li>转换图片格式</li>
+                    <li>批量处理多张图片</li>
+                    <li>即时预览压缩效果</li>
+                </ul>
+                
+                <h2 class="h4 mb-3 mt-4">技术实现</h2>
+                <p>本工具使用以下技术构建：</p>
+                <ul>
+                    <li><strong>后端</strong>：Python Flask框架</li>
+                    <li><strong>图像处理</strong>：OpenCV和Pillow库</li>
+                    <li><strong>前端</strong>：HTML5, CSS3, JavaScript, Bootstrap 5</li>
+                </ul>
+                
+                <h2 class="h4 mb-3 mt-4">使用提示</h2>
+                <div class="alert alert-info">
+                    <h3 class="h5"><i class="fas fa-lightbulb me-2"></i>如何获得最佳压缩效果？</h3>
+                    <ol>
+                        <li>对于照片和复杂图像，使用JPG或WebP格式，质量设置为70-85</li>
+                        <li>对于需要透明背景的图像，使用PNG或WebP格式</li>
+                        <li>对于简单图形或图标，考虑使用SVG格式（本工具不支持，需单独处理）</li>
+                        <li>适当调整最大宽高，通常1280px对于网站图片已经足够</li>
+                    </ol>
+                </div>
+                
+                <h2 class="h4 mb-3 mt-4">隐私说明</h2>
+                <p>所有上传的图片仅在服务器上临时存储，用于处理后会自动删除。我们不会永久保存您的图片或将其用于其他目的。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
